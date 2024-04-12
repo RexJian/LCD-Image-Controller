@@ -1,4 +1,4 @@
-# LCD-Image-Controller
+# LCD Image Controller
 The main purpose of the circuit is to process an 8x8 grayscale image using a series of predefined commands that alter the display in different ways.These operations involve shifting the operation point within the defined coordinate limits, both horizontally and vertically, and determining the maximum, minimum, and average values around the operation point of the image data. Besides the timing constraint for the clock period limited to <strong> 0.44ns </strong>, I utilized power optimization supported by Genus, which reduced the <strong> power consumption from 4.9mW to 4mW. </strong>
 
 ## Specification
@@ -48,3 +48,22 @@ The precise functions linked to each input command for the LCD Controller are sh
   <br> <strong>Fig1. Input/Output Grayscale Image Memory (IROM / IRAM) Mapping</strong>
 </p> 
 
+## Simulate Waveform
+1. After the reset signal is asserted, start reading IROM data and save it
+<p align="left">
+  <img src="https://github.com/RexJian/LCD-Image-Controller/blob/main/Wave/wave1.png" width="1300" height="300" alt="Architecture">
+</p>
+2. After saving the IROM data, cmd will export a series of commands.
+<p align="left">
+  <img src="https://github.com/RexJian/LCD-Image-Controller/blob/main/Wave/wave2.png" width="1300" height="300" alt="Architecture">
+</p>
+
+3. When the series of commands is exported to the final command 'Write,' the processed data will be written into the IRAM through IRAM_A and IRAM_D.
+<p align="left">
+  <img src="https://github.com/RexJian/LCD-Image-Controller/blob/main/Wave/wave3.png" width="1300" height="270" alt="Architecture">
+</p>
+
+4. After all data has been written into the IRAM, cmd_valid will become zero.
+<p align="left">
+  <img src="https://github.com/RexJian/LCD-Image-Controller/blob/main/Wave/wave4.png" width="1300" height="270" alt="Architecture">
+</p>
