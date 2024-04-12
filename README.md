@@ -16,3 +16,35 @@ The main purpose of the circuit is to process an 8x8 grayscale image using a ser
 | IRAM_A | O | 6 | IRAM data bus |
 | busy | O | 1 | System bus signal |
 | done | O | 1 | When the LCD controller completes writing to the IRAM, raising the 'done' signal signifies the completion of the process. |
+
+## Memory Mapping
+The grayscale input is configured with an 8x8 pixel resolution, where each pixel is represented by 8 bits of data. Consequently, the grayscale image stored on the Host side comprises a total of 64 pixels. Both the IROM and IRAM have an 8-bit data width and can store 64 addresses. Each address holds 8 bits of data, accurately encoding the grayscale information for a single pixel. This arrangement is illustrated in the image below.
+<p align="center">
+  <img src="https://github.com/RexJian/LCD-Image-Controller/blob/main/Image/IRAM_IROM_Mapping.png" width="800" height="450" alt="Architecture">
+  <br> <strong>Fig1. Input/Output Grayscale Image Memory (IROM / IRAM) Mapping</strong>
+</p> 
+
+## Command Definition
+
+The precise functions linked to each input command for the LCD Controller are showed in the table and image below.
+
+<div align="center">
+  
+| Cmd Number | Control Instruction Description |
+| :----: | :----|
+| 0(000) | Write |
+| 1(001) | Shift Up |
+| 2(010) | Shift Down|
+| 3(011) | Shift Left|
+| 4(100) | Shift Right |
+| 5(101)| Max |
+| 6(110)| Min |
+| 7(111)| Average |
+  
+</div>
+
+<p align="center">
+  <img src="https://github.com/RexJian/LCD-Image-Controller/blob/main/Image/CmdImage.png" width="800" height="450" alt="Architecture">
+  <br> <strong>Fig1. Input/Output Grayscale Image Memory (IROM / IRAM) Mapping</strong>
+</p> 
+
