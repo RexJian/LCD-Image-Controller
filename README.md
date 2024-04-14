@@ -49,20 +49,22 @@ The precise functions linked to each input command for the LCD Controller are sh
 </p> 
 
 ## Simulate Waveform
+  
 1. After the reset signal is asserted, start reading IROM data and save it
 <p align="left">
   <img src="https://github.com/RexJian/LCD-Image-Controller/blob/main/Wave/wave1.png" width="1300" height="250" alt="Architecture">
 </p>
+  
 2. After saving the IROM data, cmd will export a series of commands.
 <p align="left">
   <img src="https://github.com/RexJian/LCD-Image-Controller/blob/main/Wave/wave2.png" width="1300" height="250" alt="Architecture">
 </p>
-
+  
 3. When the series of commands is exported to the final command 'Write,' the processed data will be written into the IRAM through IRAM_A and IRAM_D.
 <p align="left">
   <img src="https://github.com/RexJian/LCD-Image-Controller/blob/main/Wave/wave3.png" width="1300" height="250" alt="Architecture">
 </p>
-
+  
 4. After all data has been written into the IRAM, cmd_valid will become zero.
 <p align="left">
   <img src="https://github.com/RexJian/LCD-Image-Controller/blob/main/Wave/wave4.png" width="1300" height="250" alt="Architecture">
