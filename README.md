@@ -1,6 +1,12 @@
 # LCD Image Controller
 The main purpose of the circuit is to process an 8x8 grayscale image using a series of predefined commands that alter the display in different ways.These operations involve shifting the operation point within the defined coordinate limits, both horizontally and vertically, and determining the maximum, minimum, and average values around the operation point of the image data. Besides the timing constraint for the clock period limited to <strong> 0.44ns </strong>, I utilized power optimization supported by Genus, which reduced the <strong> power consumption from 4.9mW to 4mW. </strong>
 
+## Table of Content
+- [Specification](#specification)
+- [Memory Mapping](#memory-mapping)
+- [Command Definition](#command-definition)
+- [Simulate Waveform](#simulate-waveform)
+
 ## Specification
 
 | Signal Name | I/O | Width | Sample Description |
